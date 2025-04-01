@@ -4,20 +4,19 @@ namespace WebApplicationShopOnline.Models
 {
     public class User
     {
-        public Guid Id { get; }
+        public Guid IdUser { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
+        public string Login { get; set; }
         public string Password { get; set; }
-        public User(string name,string email,string password)
+        public string Telephone { get; set; }
+        public string Email { get; set; }
+        public User(string name,string email,string password,string telephone)
         {
-            Id = Guid.NewGuid();
+            IdUser = Guid.NewGuid();
             Name = name;
             Email = email;
             Password = password;
-        }
-        public override string ToString()
-        {
-            return $"{Id},{Name},{Email},{Password}";
+            Telephone = telephone;
         }
     }
 }
